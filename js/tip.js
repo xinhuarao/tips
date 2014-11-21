@@ -4,7 +4,7 @@
             var _self = this;
             document.documentElement.addEventListener("mouseover",function(event){
                 if (event.target.hasAttribute("tip")) {
-                   _self.addTip(document.body,event.target);
+                   _self.addTip(document.body,event.target,event.target.getAttribute("aria-label"));
                 }
             },false);
             document.documentElement.addEventListener("mouseout",function(event){
@@ -13,15 +13,15 @@
                 }
             },false);
         },
-        addTip: function(obj,target){
+        addTip: function(obj,target,tipValue){
             var tarWin = target.getBoundingClientRect();
             var tip = document.createElement("div");
-            tip.setAttribute("aria-label","我的应用");
+            tip.setAttribute("aria-label",tipValue);
             tip.className = "tip";
             obj.appendChild(tip);
             var tipWin = tip.getBoundingClientRect();
             tip.style.left = tarWin.left+(tarWin.right-tarWin.left)/2-(tipWin.right-tipWin.left)/2+"px";
-            tip.style.top = tipWin.bottom-(tipWin.bottom-tipWin.top)+7+"px";
+            tip.style.top = tarWin.bottom+7+"px";
         },
         removeTip: function(obj){
             obj.removeChild(document.querySelector(".tip"));

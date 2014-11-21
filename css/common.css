@@ -7,12 +7,14 @@ html,body {
 *,*:before,*:after {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 .tip {
     position: fixed;
     display: inline-block;
     border: 2px solid #000;
     border-radius: 5px;
+    white-space: nowrap;
 }
 .tip:before {
     position :absolute;
@@ -45,4 +47,45 @@ html,body {
     height: 20px;
     margin: 0 auto;
     cursor: pointer;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.title-a {
+    border: 1px solid #000;
+    width: 100px;
+    height: 20px;
+    margin: 0 auto;
+    cursor: pointer;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.title-b {
+    position: fixed;
+    top: 0;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    cursor: pointer;
+    padding-top: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.title-c {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 20px;
+    margin-left: -50px;
+    margin-top: -10px;
+    border: 1px solid #000;
+}
+.title-d {
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
 }
